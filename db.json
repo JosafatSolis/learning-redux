@@ -1,0 +1,9 @@
+{
+    "todos": [
+        {
+            "id": 1,
+            "title": "Una tarea pendiente",
+            "body": "Hacer algo que está pendiente lo antes posible"
+        }
+    ]
+}
