@@ -11,18 +11,21 @@ const TodoList = () => {
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);
-  
+
   return (
     <div>
       {loadingTodos && <h2>Cargando...</h2>}
       {!loadingTodos && todos && (
-        <ul>
-          {denormalizeData(todos).map((todo) => (
-            <li key={todo.id}>
-              {todo.title}: {todo.body}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h1>Todo List</h1>
+          <ul>
+            {denormalizeData(todos).map((todo) => (
+              <li key={todo.id}>
+                {todo.title}: {todo.body}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

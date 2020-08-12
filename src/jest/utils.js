@@ -17,3 +17,6 @@ export const renderWithProvider = (
     { ...renderOptions }
   );
 };
+
+// Demo para usar Router:
+// export renderWithRouter = (component) => <BrowserRouter>{component}</BrowserRouter>

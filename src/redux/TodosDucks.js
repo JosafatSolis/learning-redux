@@ -70,11 +70,13 @@ export const getTodos = () => {
         // Habilita el loading
         dispatch(loadingTodos());
         // Comienza la carga y ejecuta acción al terminar
-        axios.get("http://localhost:4000/todos").then((res) => {
+        // Se agrega el return para poder utilizar el async await, para devolver la promesa y que un elemento externo sepa si se ha
+        // completado o no el proceso.
+        return axios.get("http://localhost:4000/todos").then((res) => {
             dispatch(getTodosSuccess(res.data));
         }).catch(res => {
             // Axios regresa el error en res.response.data y queremos el mensaje para el usuario
-            dispatch(getTodosError(res.data));
+            dispatch(getTodosError(res.response.data));
         });
     }
 }

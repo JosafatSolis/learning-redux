@@ -17,6 +17,7 @@ export const rootReducer = combineReducers({
 // La siguiente línea se agrega para que el redux-devtools-extension de Chrome, para que traquee las acciones asincronas,
 // como se muestra en https://github.com/zalmoxisus/redux-devtools-extension
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
     rootReducer,
     composeEnhancers(applyMiddleware(thunk))    
